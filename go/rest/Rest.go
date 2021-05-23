@@ -8,6 +8,6 @@ import (
 
 func GetLogs(w http.ResponseWriter, r *http.Request) {
 	var con = db.CreateCon()
-	result := db.GetAll(con)
+	result := db.GetAllLogs(con)
 	json.NewEncoder(w).Encode(result)
 }

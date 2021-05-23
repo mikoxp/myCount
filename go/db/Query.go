@@ -1,5 +1,5 @@
 package db
 
 const (
-	GetAllLogs = "SELECT id, info FROM public.info_log;"
+	GetAllLogsSelect = "SELECT id, info FROM public.info_log;"
 )

@@ -11,10 +11,10 @@ type Info struct {
 	INFO string `json:"info"`
 }
 
-func GetAll(con *sql.DB) []Info {
+func GetAllLogs(con *sql.DB) []Info {
 	values := make([]Info, 0)
 
-	results, err := con.Query(GetAllLogs)
+	results, err := con.Query(GetAllLogsSelect)
 	if err != nil {
 		panic(err.Error())
 	}

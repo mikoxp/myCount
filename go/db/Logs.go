@@ -1,7 +1,6 @@
 package db
 
 import (
-	"container/list"
 	"database/sql"
 
 	_ "github.com/lib/pq"
@@ -12,8 +11,8 @@ type Info struct {
 	INFO string `json:"info"`
 }
 
-func GetAll(con *sql.DB) *list.List {
-	values := list.New()
+func GetAll(con *sql.DB) []Info {
+	values := make([]Info, 0)
 
 	results, err := con.Query(GetAllLogs)
 	if err != nil {
@@ -25,7 +24,7 @@ func GetAll(con *sql.DB) *list.List {
 		if err != nil {
 			panic(err.Error())
 		}
-		values.PushFront(info)
+		values = append(values, info)
 	}
 	defer results.Close()
 

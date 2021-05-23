@@ -10,8 +10,8 @@ import (
 )
 
 func main() {
-	fmt.Println("Serwer running in http://localhost:8083")
+	fmt.Println("Serwer running in http://localhost:8030")
 
 	http.HandleFunc("/logs", rest.GetLogs)
-	log.Fatal(http.ListenAndServe(":8083", nil))
+	log.Fatal(http.ListenAndServe(":8030", nil))
 }

@@ -57,8 +57,9 @@ func readCsv(filename string) ([][]string, error) {
 	return lines, nil
 }
 
-func writeToFile(f *os.File, line string) {
-	_, err2 := f.WriteString(line + "\n")
+func writeToFile(f *os.File, line CsvLine) {
+	s := fmt.Sprintf("%s,%s\n", line.Column1, line.Column2)
+	_, err2 := f.WriteString(s)
 
 	if err2 != nil {
 		log.Fatal(err2)

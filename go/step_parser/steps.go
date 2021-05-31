@@ -18,7 +18,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	f, err := os.Create("data.txt")
+	f, err := os.Create("steps.sql")
 
 	if err != nil {
 		log.Fatal(err)
@@ -32,9 +32,7 @@ func main() {
 				Column1: line[0],
 				Column2: line[1],
 			}
-			x := data.Column1 + " " + data.Column2
-			fmt.Println(x)
-			writeToFile(f, x)
+			writeToFile(f, data)
 		}
 	}
 }
@@ -58,9 +56,9 @@ func readCsv(filename string) ([][]string, error) {
 }
 
 func writeToFile(f *os.File, line CsvLine) {
-	s := fmt.Sprintf("%s,%s\n", line.Column1, line.Column2)
+	s := fmt.Sprintf("INSERT INTO numeration.steps(day, steps_number) VALUES ('%s', %s);\n", line.Column1, line.Column2)
 	_, err2 := f.WriteString(s)
-
+	fmt.Print(s)
 	if err2 != nil {
 		log.Fatal(err2)
 	}

@@ -21,6 +21,6 @@ func main() {
 	//steps
 	router.HandleFunc("/steps", rest.GetSteps).Methods("GET")
 
-	log.Printf("Serwer running in http://localhost:%s\n", port)
+	log.Printf("Serwer running in http://localhost%s\n", port)
 	log.Fatalln(http.ListenAndServe(port, router))
 }

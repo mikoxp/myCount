@@ -1,4 +1,4 @@
-package endpoint
+package rest
 
 import "net/http"
 

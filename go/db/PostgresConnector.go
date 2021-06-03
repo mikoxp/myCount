@@ -3,8 +3,8 @@ package db
 import (
 	"database/sql"
 	"fmt"
-
 	_ "github.com/lib/pq"
+	"log"
 )
 
 func CreateCon() *sql.DB {
@@ -15,15 +15,13 @@ func CreateCon() *sql.DB {
 
 	db, err := sql.Open("postgres", pg_con_string)
 	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		fmt.Println("db is connected")
+		log.Println(err.Error())
 	}
 	err = db.Ping()
 	if err != nil {
-		fmt.Println(err)
-		fmt.Println("Postgres db is not connected")
-		fmt.Println(err.Error())
+		log.Println(err)
+		log.Println("Postgres db is not connected")
+		log.Println(err.Error())
 	}
 	return db
 }

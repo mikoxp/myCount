@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {ChartsModule} from "ng2-charts";
 import { AppRoutingModule } from './app-routing.module';
 import { StepsComponent } from './steps/steps.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { StepsComponent } from './steps/steps.component';
   imports: [
     BrowserModule,
     ChartsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {ChartDataSets} from "chart.js";
 import {Color, Label} from "ng2-charts";
@@ -9,7 +10,11 @@ import {Color, Label} from "ng2-charts";
 })
 export class StepsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { 
+    this.http.get<any>('/api/steps').subscribe(res=>{
+      console.log(res);
+    })
+  }
 
   ngOnInit(): void {
   }

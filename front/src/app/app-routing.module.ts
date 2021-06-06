@@ -5,7 +5,7 @@ import { StepsComponent } from './steps/steps.component';
 
 
 const routes: Routes = [
-  { path: 'steps', component: StepsComponent }
+  { path: 'steps-chart', component: StepsComponent }
 ];
 
 @NgModule({

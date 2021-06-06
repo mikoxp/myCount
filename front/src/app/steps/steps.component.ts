@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import {ChartDataSets} from "chart.js";
 import {Color, Label} from "ng2-charts";
@@ -10,19 +11,12 @@ import {Color, Label} from "ng2-charts";
 })
 export class StepsComponent implements OnInit {
 
-  constructor(private http: HttpClient) { 
-    this.http.get<any>('/api/steps').subscribe(res=>{
-      console.log(res);
-    })
-  }
+  private label:Label[]=[];
+  private data:number[]=[];
 
-  ngOnInit(): void {
-  }
-  lineChartData: ChartDataSets[] = [
-    { data: [85, 72, 78, 75, 77, 75], label: 'Crude oil prices' },
-  ];
+  lineChartData: ChartDataSets[] = [];
 
-  lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June'];
+  lineChartLabels: Label[] = [];
 
   lineChartOptions = {
     responsive: true,
@@ -31,12 +25,27 @@ export class StepsComponent implements OnInit {
   lineChartColors: Color[] = [
     {
       borderColor: 'black',
-      backgroundColor: 'rgba(255,255,0,0.28)',
+      backgroundColor: 'rgba(0, 102, 204,0.28)',
     },
   ];
 
-  lineChartLegend = true;
+  lineChartLegend = false;
   lineChartPlugins = [];
   lineChartType = 'line';
+
+  constructor(private http: HttpClient) { 
+    this.http.get<any>('/api/steps').subscribe((res:any[])=>{
+      res.forEach(element => {
+        this.label.push(element.day);
+        this.data.push(element.stepsNumber);
+      });
+      console.log(this.label,this.data);
+      this.lineChartData=[{ data: this.data, label: 'Steps' }]
+      this.lineChartLabels=this.label;
+    })
+  }
+
+  ngOnInit(): void {
+  }
 
 }

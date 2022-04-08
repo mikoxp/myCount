@@ -45,3 +45,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+
+
+kotlin/spring/.idea/
+kotlin/spring/target/
+kotlin/spring/db.mv.db

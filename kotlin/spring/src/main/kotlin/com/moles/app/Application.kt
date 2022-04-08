@@ -1,11 +1,11 @@
-package com.moles.presure
+package com.moles.app
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class PresureApplication
+class Application
 
 fun main(args: Array<String>) {
-	runApplication<PresureApplication>(*args)
+	runApplication<Application>(*args)
 }

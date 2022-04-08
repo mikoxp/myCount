@@ -1,4 +1,4 @@
-package com.moles.presure.entity
+package com.moles.app.entity
 
 import java.time.LocalDateTime
 import javax.persistence.*

@@ -1,12 +1,12 @@
-package com.moles.presure.controllers
+package com.moles.app.controllers
 
-import com.moles.presure.entity.Presure
-import com.moles.presure.repositories.PresureRepository
+import com.moles.app.entity.Presure
+import com.moles.app.repositories.PresureRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class PresureController(private val repository:PresureRepository) {
+class PresureController(private val repository: PresureRepository) {
 
 
 

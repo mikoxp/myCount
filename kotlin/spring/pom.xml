@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.moles</groupId>
-	<artifactId>presure</artifactId>
+	<artifactId>app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>presure</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Spring Kotlin App</name>
+	<description>Application for developing skills</description>
 	<properties>
 		<java.version>11</java.version>
 		<kotlin.version>1.6.10</kotlin.version>

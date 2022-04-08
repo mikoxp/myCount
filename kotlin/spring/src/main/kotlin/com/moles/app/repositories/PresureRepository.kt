@@ -1,6 +1,6 @@
-package com.moles.presure.repositories
+package com.moles.app.repositories
 
-import com.moles.presure.entity.Presure
+import com.moles.app.entity.Presure
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 

@@ -50,3 +50,9 @@ Thumbs.db
 kotlin/spring/.idea/
 kotlin/spring/target/
 kotlin/spring/db.mv.db
+kotlin/xlsProcessing/build/
+kotlin/xlsProcessing/.gradle/
+kotlin/xlsProcessing/.idea/
+kotlin/xlsProcessing/gradlew
+kotlin/xlsProcessing/gradlew.bat
+kotlin/xlsProcessing/gradle/wrapper/gradle-wrapper.jar
